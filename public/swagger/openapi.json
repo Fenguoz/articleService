@@ -1,0 +1,1038 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "文章服务",
+        "version": "1.0"
+    },
+    "servers": [
+        {
+            "url": "http://127.0.0.1:9801",
+            "description": "本地"
+        }
+    ],
+    "paths": {
+        "getList": {
+            "get": {
+                "tags": [
+                    "文章分类"
+                ],
+                "summary": "文章分类列表",
+                "description": "文章分类列表",
+                "operationId": "getList",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/category_where"
+                    },
+                    {
+                        "$ref": "#/components/parameters/category_order"
+                    },
+                    {
+                        "$ref": "#/components/parameters/count"
+                    },
+                    {
+                        "$ref": "#/components/parameters/page"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "操作成功",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/article_category"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "getPagesInfo": {
+            "get": {
+                "tags": [
+                    "文章分类"
+                ],
+                "summary": "文章分类分页信息",
+                "description": "文章分类分页信息",
+                "operationId": "getPagesInfo",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/category_where"
+                    },
+                    {
+                        "$ref": "#/components/parameters/count"
+                    },
+                    {
+                        "$ref": "#/components/parameters/page"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "操作成功",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/pageInfo"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "add": {
+            "get": {
+                "tags": [
+                    "文章分类"
+                ],
+                "summary": "添加文章分类",
+                "description": "添加文章分类",
+                "operationId": "add",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/article_params"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "操作成功",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/success"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "edit": {
+            "get": {
+                "tags": [
+                    "文章分类"
+                ],
+                "summary": "编辑文章分类",
+                "description": "编辑文章分类",
+                "operationId": "edit",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/article_params"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "操作成功",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/success"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "delete": {
+            "get": {
+                "tags": [
+                    "文章分类"
+                ],
+                "summary": "删除文章分类",
+                "description": "根据主键ID删除文章分类（支持批量）",
+                "operationId": "delete",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/ids"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "操作成功",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/success"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "getIdByKey": {
+            "get": {
+                "tags": [
+                    "文章分类"
+                ],
+                "summary": "获取文章分类主键ID",
+                "description": "根据key获取主键ID",
+                "operationId": "getIdByKey",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/key"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "操作成功",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/data"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "getTypes": {
+            "get": {
+                "tags": [
+                    "文章分类"
+                ],
+                "summary": "获取文章分类类型",
+                "description": "获取文章分类类型",
+                "operationId": "getTypes",
+                "responses": {
+                    "200": {
+                        "description": "操作成功",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/data"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/getList": {
+            "get": {
+                "tags": [
+                    "文章"
+                ],
+                "summary": "文章列表",
+                "description": "文章列表",
+                "operationId": "getList",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/article_where"
+                    },
+                    {
+                        "$ref": "#/components/parameters/article_order"
+                    },
+                    {
+                        "$ref": "#/components/parameters/count"
+                    },
+                    {
+                        "$ref": "#/components/parameters/page"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "操作成功",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/articles"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/getPagesInfo": {
+            "get": {
+                "tags": [
+                    "文章"
+                ],
+                "summary": "文章分页信息",
+                "description": "文章分页信息",
+                "operationId": "getPagesInfo",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/article_where"
+                    },
+                    {
+                        "$ref": "#/components/parameters/count"
+                    },
+                    {
+                        "$ref": "#/components/parameters/page"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "操作成功",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/pageInfo"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/add": {
+            "get": {
+                "tags": [
+                    "文章"
+                ],
+                "summary": "添加文章",
+                "description": "添加文章",
+                "operationId": "add",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/article_params"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "操作成功",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/success"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/edit": {
+            "get": {
+                "tags": [
+                    "文章"
+                ],
+                "summary": "编辑文章",
+                "description": "编辑文章",
+                "operationId": "edit",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/article_params"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "操作成功",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/success"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/delete": {
+            "get": {
+                "tags": [
+                    "文章"
+                ],
+                "summary": "删除文章",
+                "description": "根据主键ID删除文章（支持批量）",
+                "operationId": "delete",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/ids"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "操作成功",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/success"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/detail": {
+            "get": {
+                "tags": [
+                    "文章"
+                ],
+                "summary": "文章详情",
+                "description": "根据文章主键ID获取详情",
+                "operationId": "detail",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/id"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "操作成功",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/article"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/detailByKey": {
+            "get": {
+                "tags": [
+                    "文章"
+                ],
+                "summary": "文章详情（key）",
+                "description": "根据key获取文章详情",
+                "operationId": "detailByKey",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/key"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "操作成功",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/data"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/getTypes": {
+            "get": {
+                "tags": [
+                    "文章"
+                ],
+                "summary": "获取文章类型",
+                "description": "获取文章类型",
+                "operationId": "getTypes",
+                "responses": {
+                    "200": {
+                        "description": "操作成功",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/data"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "article": {
+                "type": "object",
+                "allOf": [
+                    {
+                        "properties": {
+                            "status": {
+                                "description": "状态",
+                                "type": "integer",
+                                "default": "200"
+                            },
+                            "msg": {
+                                "description": "信息",
+                                "type": "string",
+                                "default": "操作成功"
+                            },
+                            "data": {
+                                "$ref": "#/components/schemas/article_model"
+                            }
+                        },
+                        "type": "object"
+                    }
+                ]
+            },
+            "articles": {
+                "type": "object",
+                "allOf": [
+                    {
+                        "properties": {
+                            "status": {
+                                "description": "状态",
+                                "type": "integer",
+                                "default": "200"
+                            },
+                            "msg": {
+                                "description": "信息",
+                                "type": "string",
+                                "default": "操作成功"
+                            },
+                            "data": {
+                                "description": "数据",
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/article_model"
+                                }
+                            }
+                        },
+                        "type": "object"
+                    }
+                ]
+            },
+            "article_model": {
+                "properties": {
+                    "id": {
+                        "description": "主键ID",
+                        "type": "integer",
+                        "default": "1"
+                    },
+                    "category_id": {
+                        "description": "分类id",
+                        "type": "integer",
+                        "default": "0"
+                    },
+                    "title": {
+                        "description": "文章标题",
+                        "type": "string",
+                        "default": ""
+                    },
+                    "description": {
+                        "description": "文章描述",
+                        "type": "string",
+                        "default": ""
+                    },
+                    "cover": {
+                        "description": "文章图片",
+                        "type": "string",
+                        "default": ""
+                    },
+                    "display": {
+                        "description": "是否显示（0否 1是）",
+                        "type": "integer",
+                        "default": "1"
+                    },
+                    "keywords": {
+                        "description": "关键字",
+                        "type": "string",
+                        "default": ""
+                    },
+                    "recommend": {
+                        "description": "是否推荐（0否 1是）",
+                        "type": "integer",
+                        "default": "0"
+                    },
+                    "author": {
+                        "description": "作者",
+                        "type": "string",
+                        "default": ""
+                    },
+                    "hits": {
+                        "description": "阅读量",
+                        "type": "integer",
+                        "default": "0"
+                    },
+                    "type": {
+                        "description": "文章类型（1不跳转 2文章详情 3应用页面跳转 4WebView链接 5浏览器链接）",
+                        "type": "integer",
+                        "default": "1"
+                    },
+                    "link": {
+                        "description": "链接（不跳转和文章详情时为空）",
+                        "type": "string",
+                        "default": ""
+                    },
+                    "lang": {
+                        "description": "语言",
+                        "type": "string",
+                        "default": ""
+                    },
+                    "video": {
+                        "description": "视频",
+                        "type": "string",
+                        "default": ""
+                    },
+                    "content": {
+                        "description": "文章内容",
+                        "type": "string",
+                        "default": ""
+                    },
+                    "created_at": {
+                        "description": "创建时间",
+                        "type": "string",
+                        "default": "2020-01-01 0:0:0"
+                    },
+                    "updated_at": {
+                        "description": "更新时间",
+                        "type": "string",
+                        "default": "2020-01-01 0:0:0"
+                    }
+                },
+                "type": "object"
+            },
+            "article_category": {
+                "type": "object",
+                "allOf": [
+                    {
+                        "properties": {
+                            "status": {
+                                "description": "状态",
+                                "type": "integer",
+                                "default": "200"
+                            },
+                            "msg": {
+                                "description": "信息",
+                                "type": "string",
+                                "default": "操作成功"
+                            },
+                            "data": {
+                                "description": "数据",
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/article_category_model"
+                                }
+                            }
+                        },
+                        "type": "object"
+                    }
+                ]
+            },
+            "article_category_model": {
+                "properties": {
+                    "id": {
+                        "description": "主键ID",
+                        "type": "integer",
+                        "default": "1"
+                    },
+                    "name": {
+                        "description": "名称",
+                        "type": "string",
+                        "default": ""
+                    },
+                    "parent_id": {
+                        "description": "夫ID",
+                        "type": "integer",
+                        "default": "0"
+                    },
+                    "key": {
+                        "description": "key",
+                        "type": "string",
+                        "default": ""
+                    },
+                    "display": {
+                        "description": "是否显示（0否 1是）",
+                        "type": "integer",
+                        "default": "1"
+                    },
+                    "sort": {
+                        "description": "排序",
+                        "type": "integer",
+                        "default": "100"
+                    }
+                },
+                "type": "object"
+            },
+            "success": {
+                "type": "object",
+                "allOf": [
+                    {
+                        "required": [
+                            "id"
+                        ],
+                        "properties": {
+                            "status": {
+                                "description": "状态",
+                                "type": "integer",
+                                "default": "1"
+                            },
+                            "message": {
+                                "description": "信息",
+                                "type": "string",
+                                "default": "操作成功"
+                            },
+                            "data": {
+                                "type": "object",
+                                "allOf": []
+                            }
+                        },
+                        "type": "object"
+                    }
+                ]
+            },
+            "error": {
+                "properties": {
+                    "status": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "message": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "data": {
+                "type": "object",
+                "allOf": [
+                    {
+                        "properties": {
+                            "status": {
+                                "description": "状态",
+                                "type": "integer",
+                                "default": "200"
+                            },
+                            "message": {
+                                "description": "信息",
+                                "type": "string",
+                                "default": "操作成功"
+                            },
+                            "data": {
+                                "description": "数据",
+                                "type": "string",
+                                "default": ""
+                            }
+                        },
+                        "type": "object"
+                    }
+                ]
+            },
+            "pageInfo": {
+                "type": "object",
+                "allOf": [
+                    {
+                        "properties": {
+                            "status": {
+                                "description": "状态",
+                                "type": "integer",
+                                "default": "200"
+                            },
+                            "message": {
+                                "description": "信息",
+                                "type": "string",
+                                "default": "操作成功"
+                            },
+                            "data": {
+                                "type": "object",
+                                "allOf": [
+                                    {
+                                        "properties": {
+                                            "page": {
+                                                "description": "当前页",
+                                                "type": "integer",
+                                                "default": "1"
+                                            },
+                                            "count": {
+                                                "description": "每页条数",
+                                                "type": "integer",
+                                                "default": "10"
+                                            },
+                                            "total": {
+                                                "description": "总共条数",
+                                                "type": "integer",
+                                                "default": "0"
+                                            },
+                                            "total_page": {
+                                                "description": "总共页数",
+                                                "type": "integer",
+                                                "default": "0"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                ]
+                            }
+                        },
+                        "type": "object"
+                    }
+                ]
+            }
+        },
+        "parameters": {
+            "ids": {
+                "name": "ids",
+                "in": "query",
+                "description": "主键IDs",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "article_params": {
+                "name": "params",
+                "in": "query",
+                "description": "参数(category_id,title,key[,content|description|cover|display|recommend|sort|keywords|hits|author|type|link|lang|video])",
+                "required": true,
+                "schema": {
+                    "type": "object"
+                }
+            },
+            "article_where": {
+                "name": "where",
+                "in": "query",
+                "description": "where条件 例:{'category_id':1}",
+                "required": false,
+                "schema": {
+                    "type": "object"
+                }
+            },
+            "article_order": {
+                "name": "order",
+                "in": "query",
+                "description": "排序 例:{'hits':'DESC','id':'DESC'}",
+                "required": false,
+                "schema": {
+                    "type": "object"
+                }
+            },
+            "category_where": {
+                "name": "where",
+                "in": "query",
+                "description": "where条件 例:{'parent_id':0}",
+                "required": false,
+                "schema": {
+                    "type": "object"
+                }
+            },
+            "category_order": {
+                "name": "order",
+                "in": "query",
+                "description": "排序 例:{'sort':'DESC','id':'DESC'}",
+                "required": false,
+                "schema": {
+                    "type": "object"
+                }
+            },
+            "id": {
+                "name": "id",
+                "in": "query",
+                "description": "id",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            },
+            "page": {
+                "name": "page",
+                "in": "query",
+                "description": "页数",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            },
+            "count": {
+                "name": "count",
+                "in": "query",
+                "description": "条数",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            },
+            "order_by": {
+                "name": "order_by",
+                "in": "query",
+                "description": "排序字段(默认:id)",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "start_time": {
+                "name": "start_time",
+                "in": "query",
+                "description": "开始时间戳",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            },
+            "end_time": {
+                "name": "end_time",
+                "in": "query",
+                "description": "结束时间戳",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            },
+            "version": {
+                "name": "version",
+                "in": "query",
+                "description": "版本(默认1.0.0)",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "device": {
+                "name": "device",
+                "in": "query",
+                "description": "设备(默认:android,ios)",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "version_type": {
+                "name": "version_type",
+                "in": "query",
+                "description": "设备类型(base,alpha,beta,默认:RC,release)",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "amount": {
+                "name": "amount",
+                "in": "query",
+                "description": "数量",
+                "required": true,
+                "schema": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            },
+            "number": {
+                "name": "number",
+                "in": "query",
+                "description": "数量",
+                "required": true,
+                "schema": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            },
+            "remark": {
+                "name": "remark",
+                "in": "query",
+                "description": "备注",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "keyword": {
+                "name": "keyword",
+                "in": "query",
+                "description": "关键词",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "type_id": {
+                "name": "type_id",
+                "in": "query",
+                "description": "账单类型ID",
+                "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "number_min": {
+                "name": "number_min",
+                "in": "query",
+                "description": "最小数量",
+                "required": false,
+                "schema": {
+                    "type": "float"
+                }
+            },
+            "number_max": {
+                "name": "number_max",
+                "in": "query",
+                "description": "最大数量",
+                "required": false,
+                "schema": {
+                    "type": "float"
+                }
+            },
+            "area": {
+                "name": "area",
+                "in": "query",
+                "description": "区号",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "phone_number": {
+                "name": "phone_number",
+                "in": "query",
+                "description": "手机号",
+                "required": true,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "email": {
+                "name": "email",
+                "in": "query",
+                "description": "邮箱",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "account": {
+                "name": "account",
+                "in": "query",
+                "description": "账户",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "ticket": {
+                "name": "ticket",
+                "in": "query",
+                "description": "ticket",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "randstr": {
+                "name": "randstr",
+                "in": "query",
+                "description": "randstr",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "key": {
+                "name": "key",
+                "in": "query",
+                "description": "索引key",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                }
+            }
+        },
+        "securitySchemes": {
+            "Authorization": {
+                "type": "apiKey",
+                "description": "Token检验",
+                "name": "Authorization",
+                "in": "header"
+            }
+        }
+    }
+}
