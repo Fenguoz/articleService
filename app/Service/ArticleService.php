@@ -253,11 +253,13 @@ class ArticleService extends BaseService implements ArticleServiceInterface
      */
     public function detailByKey(string $key)
     {
-        $info = Article::where('key', $key)->first();
-        if (!$info)
+        $article = Article::where('key', $key)->first();
+        if (!$article)
             throw new BusinessException(ErrorCode::DATA_NOT_EXIST);
 
-        return $this->success($info);
+        $article->hits += 1;
+        $article->save();
+        return $this->success($article);
     }
 
     /**

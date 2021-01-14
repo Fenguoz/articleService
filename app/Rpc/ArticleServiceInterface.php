@@ -17,4 +17,6 @@ interface ArticleServiceInterface
     public function detail(int $id);
 
     public function detailByKey(string $key);
+
+    public function getTypes();
 }
