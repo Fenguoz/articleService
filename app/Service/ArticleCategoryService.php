@@ -48,7 +48,7 @@ class ArticleCategoryService extends BaseService implements ArticleCategoryServi
     ) {
         $list = (new ArticleCategory())->getList($where, $order, $count, $page);
         if (!$list)
-            throw new BusinessException(ErrorCode::DELETE_FAIL);
+            throw new BusinessException(ErrorCode::NO_DATA);
 
         return $this->success($list);
     }
@@ -135,7 +135,7 @@ class ArticleCategoryService extends BaseService implements ArticleCategoryServi
 
         $result = ArticleCategory::where('id', $id)->update($data);
         if (!$result)
-            throw new BusinessException(ErrorCode::ADD_FAIL);
+            throw new BusinessException(ErrorCode::UPDATE_FAIL);
         return $this->success();
     }
 
@@ -149,9 +149,9 @@ class ArticleCategoryService extends BaseService implements ArticleCategoryServi
     {
         $data = [];
         if (!isset($params['parent_id']) || $params['parent_id'] <= 0)
-            throw new BusinessException(ErrorCode::IDS_EMPTY);
+            throw new BusinessException(ErrorCode::PARENT_ID_ERROR);
         if (!isset($params['name']) || empty($params['name']))
-            throw new BusinessException(ErrorCode::IDS_EMPTY);
+            throw new BusinessException(ErrorCode::NAME_EMPTY);
 
         $data['parent_id'] = (int)$params['parent_id'];
         $data['name'] = $params['name'];
@@ -241,7 +241,7 @@ class ArticleCategoryService extends BaseService implements ArticleCategoryServi
     {
         $types = ArticleCategoryType::pluck('name', 'key');
         if ($types->isEmpty())
-            throw new BusinessException(ErrorCode::DATA_NOT_EXIST);
+            throw new BusinessException(ErrorCode::NO_DATA);
 
         return $this->success($types);
     }

@@ -71,8 +71,33 @@ class ErrorCode extends AbstractConstants
     const DELETE_FAIL = 10004;
 
     /**
+     * @Message("NO_DATA")
+     */
+    const NO_DATA = 10005;
+
+    /**
      * @Message("IDS_EMPTY")
      */
     const IDS_EMPTY = 13000;
+
+    /**
+     * @Message("NAME_EMPTY")
+     */
+    const NAME_EMPTY = 13001;
+
+    /**
+     * @Message("PARENT_ID_ERROR")
+     */
+    const PARENT_ID_ERROR = 13002;
+
+    /**
+     * @Message("TITLE_EMPTY")
+     */
+    const TITLE_EMPTY = 13003;
+
+    /**
+     * @Message("CATEGORY_ID_RERROR")
+     */
+    const CATEGORY_ID_RERROR = 13004;
 
 }

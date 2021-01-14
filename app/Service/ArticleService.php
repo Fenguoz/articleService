@@ -48,7 +48,7 @@ class ArticleService extends BaseService implements ArticleServiceInterface
     ) {
         $list = (new Article)->getList($where, $order, $count, $page);
         if (!$list)
-            throw new BusinessException(ErrorCode::DELETE_FAIL);
+            throw new BusinessException(ErrorCode::NO_DATA);
 
         return $this->success($list);
     }
@@ -135,7 +135,7 @@ class ArticleService extends BaseService implements ArticleServiceInterface
 
         $result = Article::where('id', $id)->update($data);
         if (!$result)
-            throw new BusinessException(ErrorCode::ADD_FAIL);
+            throw new BusinessException(ErrorCode::UPDATE_FAIL);
         return $this->success();
     }
 
@@ -149,9 +149,9 @@ class ArticleService extends BaseService implements ArticleServiceInterface
     {
         $data = [];
         if (!isset($params['category_id']) || $params['category_id'] <= 0)
-            throw new BusinessException(ErrorCode::IDS_EMPTY);
+            throw new BusinessException(ErrorCode::CATEGORY_ID_RERROR);
         if (!isset($params['title']) || empty($params['title']))
-            throw new BusinessException(ErrorCode::IDS_EMPTY);
+            throw new BusinessException(ErrorCode::TITLE_EMPTY);
 
         $data['category_id'] = (int)$params['category_id'];
         $data['title'] = $params['title'];
@@ -281,7 +281,7 @@ class ArticleService extends BaseService implements ArticleServiceInterface
     {
         $types = ArticleType::pluck('name', 'key');
         if ($types->isEmpty())
-            throw new BusinessException(ErrorCode::DATA_NOT_EXIST);
+            throw new BusinessException(ErrorCode::NO_DATA);
 
         return $this->success($types);
     }
