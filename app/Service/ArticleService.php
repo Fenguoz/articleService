@@ -23,7 +23,7 @@ class ArticleService extends BaseService implements ArticleServiceInterface
      * @Get(
      *     path="/getList",
      *     operationId="getList",
-     *     tags={"文章"},
+     *     tags={"ArticleService"},
      *     summary="文章列表",
      *     description="文章列表",
      *     @Parameter(ref="#/components/parameters/article_where"),
@@ -62,7 +62,7 @@ class ArticleService extends BaseService implements ArticleServiceInterface
      * @Get(
      *     path="/getPagesInfo",
      *     operationId="getPagesInfo",
-     *     tags={"文章"},
+     *     tags={"ArticleService"},
      *     summary="文章分页信息",
      *     description="文章分页信息",
      *     @Parameter(ref="#/components/parameters/article_where"),
@@ -88,7 +88,7 @@ class ArticleService extends BaseService implements ArticleServiceInterface
      * @Get(
      *     path="/add",
      *     operationId="add",
-     *     tags={"文章"},
+     *     tags={"ArticleService"},
      *     summary="添加文章",
      *     description="添加文章",
      *     @Parameter(ref="#/components/parameters/article_params"),
@@ -121,7 +121,7 @@ class ArticleService extends BaseService implements ArticleServiceInterface
      * @Get(
      *     path="/edit",
      *     operationId="edit",
-     *     tags={"文章"},
+     *     tags={"ArticleService"},
      *     summary="编辑文章",
      *     description="编辑文章",
      *     @Parameter(ref="#/components/parameters/article_params"),
@@ -192,7 +192,7 @@ class ArticleService extends BaseService implements ArticleServiceInterface
      * @Get(
      *     path="/delete",
      *     operationId="delete",
-     *     tags={"文章"},
+     *     tags={"ArticleService"},
      *     summary="删除文章",
      *     description="根据主键ID删除文章（支持批量）",
      *     @Parameter(ref="#/components/parameters/ids"),
@@ -228,7 +228,7 @@ class ArticleService extends BaseService implements ArticleServiceInterface
      * @Get(
      *     path="/detail",
      *     operationId="detail",
-     *     tags={"文章"},
+     *     tags={"ArticleService"},
      *     summary="文章详情",
      *     description="根据文章主键ID获取详情",
      *     @Parameter(ref="#/components/parameters/id"),
@@ -262,7 +262,7 @@ class ArticleService extends BaseService implements ArticleServiceInterface
      * @Get(
      *     path="/detailByKey",
      *     operationId="detailByKey",
-     *     tags={"文章"},
+     *     tags={"ArticleService"},
      *     summary="文章详情（key）",
      *     description="根据key获取文章详情",
      *     @Parameter(ref="#/components/parameters/key"),
@@ -296,7 +296,7 @@ class ArticleService extends BaseService implements ArticleServiceInterface
      * @Get(
      *     path="/getTypes",
      *     operationId="getTypes",
-     *     tags={"文章"},
+     *     tags={"ArticleService"},
      *     summary="获取文章类型",
      *     description="获取文章类型",
      *     @Response(

@@ -10,7 +10,7 @@ use OpenApi\Annotations\Server;
 /**
  * @Info(
  *     version="1.0",
- *     title="文章服务",
+ *     title="Article｜Microservice",
  * ),
  * @Server(
  *     url="http://127.0.0.1:9801",

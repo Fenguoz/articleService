@@ -1,7 +1,7 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "文章服务",
+        "title": "Article｜Microservice",
         "version": "1.0"
     },
     "servers": [
@@ -14,7 +14,7 @@
         "getList": {
             "get": {
                 "tags": [
-                    "文章分类"
+                    "ArticleCategoryService"
                 ],
                 "summary": "文章分类列表",
                 "description": "文章分类列表",
@@ -60,7 +60,7 @@
         "getPagesInfo": {
             "get": {
                 "tags": [
-                    "文章分类"
+                    "ArticleCategoryService"
                 ],
                 "summary": "文章分类分页信息",
                 "description": "文章分类分页信息",
@@ -93,7 +93,7 @@
         "add": {
             "get": {
                 "tags": [
-                    "文章分类"
+                    "ArticleCategoryService"
                 ],
                 "summary": "添加文章分类",
                 "description": "添加文章分类",
@@ -130,7 +130,7 @@
         "edit": {
             "get": {
                 "tags": [
-                    "文章分类"
+                    "ArticleCategoryService"
                 ],
                 "summary": "编辑文章分类",
                 "description": "编辑文章分类",
@@ -167,7 +167,7 @@
         "delete": {
             "get": {
                 "tags": [
-                    "文章分类"
+                    "ArticleCategoryService"
                 ],
                 "summary": "删除文章分类",
                 "description": "根据主键ID删除文章分类（支持批量）",
@@ -204,7 +204,7 @@
         "getIdByKey": {
             "get": {
                 "tags": [
-                    "文章分类"
+                    "ArticleCategoryService"
                 ],
                 "summary": "获取文章分类主键ID",
                 "description": "根据key获取主键ID",
@@ -241,7 +241,7 @@
         "getTypes": {
             "get": {
                 "tags": [
-                    "文章分类"
+                    "ArticleCategoryService"
                 ],
                 "summary": "获取文章分类类型",
                 "description": "获取文章分类类型",
@@ -273,7 +273,7 @@
         "/getList": {
             "get": {
                 "tags": [
-                    "文章"
+                    "ArticleService"
                 ],
                 "summary": "文章列表",
                 "description": "文章列表",
@@ -319,7 +319,7 @@
         "/getPagesInfo": {
             "get": {
                 "tags": [
-                    "文章"
+                    "ArticleService"
                 ],
                 "summary": "文章分页信息",
                 "description": "文章分页信息",
@@ -352,7 +352,7 @@
         "/add": {
             "get": {
                 "tags": [
-                    "文章"
+                    "ArticleService"
                 ],
                 "summary": "添加文章",
                 "description": "添加文章",
@@ -389,7 +389,7 @@
         "/edit": {
             "get": {
                 "tags": [
-                    "文章"
+                    "ArticleService"
                 ],
                 "summary": "编辑文章",
                 "description": "编辑文章",
@@ -426,7 +426,7 @@
         "/delete": {
             "get": {
                 "tags": [
-                    "文章"
+                    "ArticleService"
                 ],
                 "summary": "删除文章",
                 "description": "根据主键ID删除文章（支持批量）",
@@ -463,7 +463,7 @@
         "/detail": {
             "get": {
                 "tags": [
-                    "文章"
+                    "ArticleService"
                 ],
                 "summary": "文章详情",
                 "description": "根据文章主键ID获取详情",
@@ -500,7 +500,7 @@
         "/detailByKey": {
             "get": {
                 "tags": [
-                    "文章"
+                    "ArticleService"
                 ],
                 "summary": "文章详情（key）",
                 "description": "根据key获取文章详情",
@@ -537,7 +537,7 @@
         "/getTypes": {
             "get": {
                 "tags": [
-                    "文章"
+                    "ArticleService"
                 ],
                 "summary": "获取文章类型",
                 "description": "获取文章类型",

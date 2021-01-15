@@ -23,7 +23,7 @@ class ArticleCategoryService extends BaseService implements ArticleCategoryServi
      * @Get(
      *     path="getList",
      *     operationId="getList",
-     *     tags={"文章分类"},
+     *     tags={"ArticleCategoryService"},
      *     summary="文章分类列表",
      *     description="文章分类列表",
      *     @Parameter(ref="#/components/parameters/category_where"),
@@ -62,7 +62,7 @@ class ArticleCategoryService extends BaseService implements ArticleCategoryServi
      * @Get(
      *     path="getPagesInfo",
      *     operationId="getPagesInfo",
-     *     tags={"文章分类"},
+     *     tags={"ArticleCategoryService"},
      *     summary="文章分类分页信息",
      *     description="文章分类分页信息",
      *     @Parameter(ref="#/components/parameters/category_where"),
@@ -88,7 +88,7 @@ class ArticleCategoryService extends BaseService implements ArticleCategoryServi
      * @Get(
      *     path="add",
      *     operationId="add",
-     *     tags={"文章分类"},
+     *     tags={"ArticleCategoryService"},
      *     summary="添加文章分类",
      *     description="添加文章分类",
      *     @Parameter(ref="#/components/parameters/article_params"),
@@ -121,7 +121,7 @@ class ArticleCategoryService extends BaseService implements ArticleCategoryServi
      * @Get(
      *     path="edit",
      *     operationId="edit",
-     *     tags={"文章分类"},
+     *     tags={"ArticleCategoryService"},
      *     summary="编辑文章分类",
      *     description="编辑文章分类",
      *     @Parameter(ref="#/components/parameters/article_params"),
@@ -181,7 +181,7 @@ class ArticleCategoryService extends BaseService implements ArticleCategoryServi
      * @Get(
      *     path="delete",
      *     operationId="delete",
-     *     tags={"文章分类"},
+     *     tags={"ArticleCategoryService"},
      *     summary="删除文章分类",
      *     description="根据主键ID删除文章分类（支持批量）",
      *     @Parameter(ref="#/components/parameters/ids"),
@@ -217,7 +217,7 @@ class ArticleCategoryService extends BaseService implements ArticleCategoryServi
      * @Get(
      *     path="getIdByKey",
      *     operationId="getIdByKey",
-     *     tags={"文章分类"},
+     *     tags={"ArticleCategoryService"},
      *     summary="获取文章分类主键ID",
      *     description="根据key获取主键ID",
      *     @Parameter(ref="#/components/parameters/key"),
@@ -249,7 +249,7 @@ class ArticleCategoryService extends BaseService implements ArticleCategoryServi
      * @Get(
      *     path="getTypes",
      *     operationId="getTypes",
-     *     tags={"文章分类"},
+     *     tags={"ArticleCategoryService"},
      *     summary="获取文章分类类型",
      *     description="获取文章分类类型",
      *     @Response(
