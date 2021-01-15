@@ -5,8 +5,8 @@
  *      type="object",
  *      allOf={
  *          @OA\Schema(
- *              @OA\Property(property="status", description="状态", type="integer", default="200"),
- *              @OA\Property(property="msg", description="信息", type="string", default="操作成功"),
+ *              @OA\Property(property="code", description="状态", type="integer", default="200"),
+ *              @OA\Property(property="message", description="信息", type="string", default="操作成功"),
  *              @OA\Property(property="data", description="数据",ref="#/components/schemas/article_model")
  *          )
  *      }
@@ -18,8 +18,8 @@
  *      type="object",
  *      allOf={
  *          @OA\Schema(
- *              @OA\Property(property="status", description="状态", type="integer", default="200"),
- *              @OA\Property(property="msg", description="信息", type="string", default="操作成功"),
+ *              @OA\Property(property="code", description="状态", type="integer", default="200"),
+ *              @OA\Property(property="message", description="信息", type="string", default="操作成功"),
  *              @OA\Property(
  *                  property="data",
  *                  type="array",

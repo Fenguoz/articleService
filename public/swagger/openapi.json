@@ -35,11 +35,21 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "操作成功",
+                        "description": "SUCCESS",
                         "content": {
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/article_category"
+                                }
+                            }
+                        }
+                    },
+                    "10005": {
+                        "description": "NO_DATA",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/no_data"
                                 }
                             }
                         }
@@ -103,6 +113,16 @@
                                 }
                             }
                         }
+                    },
+                    "10001": {
+                        "description": "ADD_FAIL",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/error"
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -127,6 +147,16 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/success"
+                                }
+                            }
+                        }
+                    },
+                    "10003": {
+                        "description": "UPDATE_FAIL",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/error"
                                 }
                             }
                         }
@@ -157,6 +187,16 @@
                                 }
                             }
                         }
+                    },
+                    "10004": {
+                        "description": "DELETE_FAIL",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/error"
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -184,6 +224,16 @@
                                 }
                             }
                         }
+                    },
+                    "10002": {
+                        "description": "DATA_NOT_EXIST",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/error"
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -203,6 +253,16 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/data"
+                                }
+                            }
+                        }
+                    },
+                    "10005": {
+                        "description": "NO_DATA",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/error"
                                 }
                             }
                         }
@@ -234,11 +294,21 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "操作成功",
+                        "description": "SUCCESS",
                         "content": {
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/articles"
+                                }
+                            }
+                        }
+                    },
+                    "10005": {
+                        "description": "NO_DATA",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/no_data"
                                 }
                             }
                         }
@@ -302,6 +372,16 @@
                                 }
                             }
                         }
+                    },
+                    "10001": {
+                        "description": "ADD_FAIL",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/error"
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -326,6 +406,16 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/success"
+                                }
+                            }
+                        }
+                    },
+                    "10003": {
+                        "description": "UPDATE_FAIL",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/error"
                                 }
                             }
                         }
@@ -356,6 +446,16 @@
                                 }
                             }
                         }
+                    },
+                    "10004": {
+                        "description": "DELETE_FAIL",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/error"
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -380,6 +480,16 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/article"
+                                }
+                            }
+                        }
+                    },
+                    "10002": {
+                        "description": "DATA_NOT_EXIST",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/error"
                                 }
                             }
                         }
@@ -410,6 +520,16 @@
                                 }
                             }
                         }
+                    },
+                    "10002": {
+                        "description": "DATA_NOT_EXIST",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/error"
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -432,6 +552,16 @@
                                 }
                             }
                         }
+                    },
+                    "10005": {
+                        "description": "NO_DATA",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/error"
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -444,12 +574,12 @@
                 "allOf": [
                     {
                         "properties": {
-                            "status": {
+                            "code": {
                                 "description": "状态",
                                 "type": "integer",
                                 "default": "200"
                             },
-                            "msg": {
+                            "message": {
                                 "description": "信息",
                                 "type": "string",
                                 "default": "操作成功"
@@ -467,12 +597,12 @@
                 "allOf": [
                     {
                         "properties": {
-                            "status": {
+                            "code": {
                                 "description": "状态",
                                 "type": "integer",
                                 "default": "200"
                             },
-                            "msg": {
+                            "message": {
                                 "description": "信息",
                                 "type": "string",
                                 "default": "操作成功"
@@ -584,12 +714,12 @@
                 "allOf": [
                     {
                         "properties": {
-                            "status": {
+                            "code": {
                                 "description": "状态",
                                 "type": "integer",
                                 "default": "200"
                             },
-                            "msg": {
+                            "message": {
                                 "description": "信息",
                                 "type": "string",
                                 "default": "操作成功"
@@ -649,7 +779,7 @@
                             "id"
                         ],
                         "properties": {
-                            "status": {
+                            "code": {
                                 "description": "状态",
                                 "type": "integer",
                                 "default": "1"
@@ -670,7 +800,7 @@
             },
             "error": {
                 "properties": {
-                    "status": {
+                    "code": {
                         "type": "integer",
                         "format": "int32"
                     },
@@ -685,7 +815,7 @@
                 "allOf": [
                     {
                         "properties": {
-                            "status": {
+                            "code": {
                                 "description": "状态",
                                 "type": "integer",
                                 "default": "200"
@@ -710,7 +840,7 @@
                 "allOf": [
                     {
                         "properties": {
-                            "status": {
+                            "code": {
                                 "description": "状态",
                                 "type": "integer",
                                 "default": "200"
@@ -754,6 +884,20 @@
                         "type": "object"
                     }
                 ]
+            },
+            "no_data": {
+                "properties": {
+                    "code": {
+                        "type": "integer",
+                        "format": "int32",
+                        "default": "10005"
+                    },
+                    "message": {
+                        "type": "string",
+                        "default": "NO_DATA"
+                    }
+                },
+                "type": "object"
             }
         },
         "parameters": {

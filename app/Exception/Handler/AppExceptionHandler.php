@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace App\Exception\Handler;
 
 use App\Exception\BusinessException;
+use Exception;
 use Hyperf\Contract\StdoutLoggerInterface;
 use Hyperf\Di\Annotation\Inject;
 use Hyperf\ExceptionHandler\ExceptionHandler;
@@ -54,6 +55,13 @@ class AppExceptionHandler extends ExceptionHandler
             ]);
         }
 
+        if ($throwable instanceof Exception) {
+            $this->stopPropagation();
+            return $this->response->json([
+                'code' => $throwable->getCode(),
+                'message'=> $throwable->getMessage(),
+            ]);
+        }
         return $response->withHeader('Server', 'Hyperf')->withStatus(500)->withBody(new SwooleStream('Internal Server Error.'));
     }
 

@@ -32,8 +32,13 @@ class ArticleService extends BaseService implements ArticleServiceInterface
      *     @Parameter(ref="#/components/parameters/page"),
      *     @Response(
      *         response=200,
-     *         description="操作成功",
+     *         description="SUCCESS",
      *         @JsonContent(ref="#/components/schemas/articles")
+     *     ),
+     *     @Response(
+     *         response=10005,
+     *         description="NO_DATA",
+     *         @JsonContent(ref="#/components/schemas/no_data")
      *     )
      * )
      */
@@ -91,6 +96,11 @@ class ArticleService extends BaseService implements ArticleServiceInterface
      *         response=200,
      *         description="操作成功",
      *         @JsonContent(ref="#/components/schemas/success")
+     *     ),
+     *     @Response(
+     *         response=10001,
+     *         description="ADD_FAIL",
+     *         @JsonContent(ref="#/components/schemas/error")
      *     )
      * )
      */
@@ -119,6 +129,11 @@ class ArticleService extends BaseService implements ArticleServiceInterface
      *         response=200,
      *         description="操作成功",
      *         @JsonContent(ref="#/components/schemas/success")
+     *     ),
+     *     @Response(
+     *         response=10003,
+     *         description="UPDATE_FAIL",
+     *         @JsonContent(ref="#/components/schemas/error")
      *     )
      * )
      */
@@ -185,6 +200,11 @@ class ArticleService extends BaseService implements ArticleServiceInterface
      *         response=200,
      *         description="操作成功",
      *         @JsonContent(ref="#/components/schemas/success")
+     *     ),
+     *     @Response(
+     *         response=10004,
+     *         description="DELETE_FAIL",
+     *         @JsonContent(ref="#/components/schemas/error")
      *     )
      * )
      */
@@ -216,6 +236,11 @@ class ArticleService extends BaseService implements ArticleServiceInterface
      *         response=200,
      *         description="操作成功",
      *         @JsonContent(ref="#/components/schemas/article")
+     *     ),
+     *     @Response(
+     *         response=10002,
+     *         description="DATA_NOT_EXIST",
+     *         @JsonContent(ref="#/components/schemas/error")
      *     )
      * )
      */
@@ -245,6 +270,11 @@ class ArticleService extends BaseService implements ArticleServiceInterface
      *         response=200,
      *         description="操作成功",
      *         @JsonContent(ref="#/components/schemas/data")
+     *     ),
+     *     @Response(
+     *         response=10002,
+     *         description="DATA_NOT_EXIST",
+     *         @JsonContent(ref="#/components/schemas/error")
      *     )
      * )
      */
@@ -273,6 +303,11 @@ class ArticleService extends BaseService implements ArticleServiceInterface
      *         response=200,
      *         description="操作成功",
      *         @JsonContent(ref="#/components/schemas/data")
+     *     ),
+     *     @Response(
+     *         response=10005,
+     *         description="NO_DATA",
+     *         @JsonContent(ref="#/components/schemas/error")
      *     )
      * )
      */
