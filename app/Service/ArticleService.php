@@ -21,7 +21,7 @@ class ArticleService extends BaseService implements ArticleServiceInterface
 {
     /**
      * @Get(
-     *     path="/getList",
+     *     path="/article/getList",
      *     operationId="getList",
      *     tags={"ArticleService"},
      *     summary="文章列表",
@@ -60,7 +60,7 @@ class ArticleService extends BaseService implements ArticleServiceInterface
 
     /**
      * @Get(
-     *     path="/getPagesInfo",
+     *     path="/article/getPagesInfo",
      *     operationId="getPagesInfo",
      *     tags={"ArticleService"},
      *     summary="文章分页信息",
@@ -86,7 +86,7 @@ class ArticleService extends BaseService implements ArticleServiceInterface
 
     /**
      * @Get(
-     *     path="/add",
+     *     path="/article/add",
      *     operationId="add",
      *     tags={"ArticleService"},
      *     summary="添加文章",
@@ -119,7 +119,7 @@ class ArticleService extends BaseService implements ArticleServiceInterface
 
     /**
      * @Get(
-     *     path="/edit",
+     *     path="/article/edit",
      *     operationId="edit",
      *     tags={"ArticleService"},
      *     summary="编辑文章",
@@ -190,7 +190,7 @@ class ArticleService extends BaseService implements ArticleServiceInterface
 
     /**
      * @Get(
-     *     path="/delete",
+     *     path="/article/delete",
      *     operationId="delete",
      *     tags={"ArticleService"},
      *     summary="删除文章",
@@ -226,7 +226,7 @@ class ArticleService extends BaseService implements ArticleServiceInterface
 
     /**
      * @Get(
-     *     path="/detail",
+     *     path="/article/detail",
      *     operationId="detail",
      *     tags={"ArticleService"},
      *     summary="文章详情",
@@ -260,7 +260,7 @@ class ArticleService extends BaseService implements ArticleServiceInterface
 
     /**
      * @Get(
-     *     path="/detailByKey",
+     *     path="/article/detailByKey",
      *     operationId="detailByKey",
      *     tags={"ArticleService"},
      *     summary="文章详情（key）",
@@ -294,7 +294,7 @@ class ArticleService extends BaseService implements ArticleServiceInterface
 
     /**
      * @Get(
-     *     path="/getTypes",
+     *     path="/article/getTypes",
      *     operationId="getTypes",
      *     tags={"ArticleService"},
      *     summary="获取文章类型",

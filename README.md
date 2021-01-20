@@ -17,3 +17,24 @@
 
 - 访问地址：Nginx自行配置（地址：public/swagger/index.html）
 - 更新命令：php bin/hyperf.php swagger:gen -o ./public/swagger/ -f json
+
+# JSON-RPC
+
+``` php
+//REST Client 示例
+POST http://127.0.0.1:9801 HTTP/1.1
+Content-Type: {{contentType}}
+
+{
+    "jsonrpc":"2.0",
+    "method":"/article/getList",
+    "params":[
+        {"category_id":"5"},
+        [],
+        20,
+        1
+    ],
+    "id":"6007d5ab4096b",
+    "context":[]
+}
+```

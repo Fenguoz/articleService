@@ -21,7 +21,7 @@ class ArticleCategoryService extends BaseService implements ArticleCategoryServi
 {
     /**
      * @Get(
-     *     path="getList",
+     *     path="/article_category/getList",
      *     operationId="getList",
      *     tags={"ArticleCategoryService"},
      *     summary="文章分类列表",
@@ -60,7 +60,7 @@ class ArticleCategoryService extends BaseService implements ArticleCategoryServi
 
     /**
      * @Get(
-     *     path="getPagesInfo",
+     *     path="/article_category/getPagesInfo",
      *     operationId="getPagesInfo",
      *     tags={"ArticleCategoryService"},
      *     summary="文章分类分页信息",
@@ -86,7 +86,7 @@ class ArticleCategoryService extends BaseService implements ArticleCategoryServi
 
     /**
      * @Get(
-     *     path="add",
+     *     path="/article_category/add",
      *     operationId="add",
      *     tags={"ArticleCategoryService"},
      *     summary="添加文章分类",
@@ -119,7 +119,7 @@ class ArticleCategoryService extends BaseService implements ArticleCategoryServi
 
     /**
      * @Get(
-     *     path="edit",
+     *     path="/article_category/edit",
      *     operationId="edit",
      *     tags={"ArticleCategoryService"},
      *     summary="编辑文章分类",
@@ -179,7 +179,7 @@ class ArticleCategoryService extends BaseService implements ArticleCategoryServi
 
     /**
      * @Get(
-     *     path="delete",
+     *     path="/article_category/delete",
      *     operationId="delete",
      *     tags={"ArticleCategoryService"},
      *     summary="删除文章分类",
@@ -215,7 +215,7 @@ class ArticleCategoryService extends BaseService implements ArticleCategoryServi
 
     /**
      * @Get(
-     *     path="getIdByKey",
+     *     path="/article_category/getIdByKey",
      *     operationId="getIdByKey",
      *     tags={"ArticleCategoryService"},
      *     summary="获取文章分类主键ID",
@@ -247,7 +247,7 @@ class ArticleCategoryService extends BaseService implements ArticleCategoryServi
 
     /**
      * @Get(
-     *     path="getTypes",
+     *     path="/article_category/getTypes",
      *     operationId="getTypes",
      *     tags={"ArticleCategoryService"},
      *     summary="获取文章分类类型",

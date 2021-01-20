@@ -11,7 +11,7 @@
         }
     ],
     "paths": {
-        "getList": {
+        "/article_category/getList": {
             "get": {
                 "tags": [
                     "ArticleCategoryService"
@@ -57,7 +57,7 @@
                 }
             }
         },
-        "getPagesInfo": {
+        "/article_category/getPagesInfo": {
             "get": {
                 "tags": [
                     "ArticleCategoryService"
@@ -90,7 +90,7 @@
                 }
             }
         },
-        "add": {
+        "/article_category/add": {
             "get": {
                 "tags": [
                     "ArticleCategoryService"
@@ -127,7 +127,7 @@
                 }
             }
         },
-        "edit": {
+        "/article_category/edit": {
             "get": {
                 "tags": [
                     "ArticleCategoryService"
@@ -164,7 +164,7 @@
                 }
             }
         },
-        "delete": {
+        "/article_category/delete": {
             "get": {
                 "tags": [
                     "ArticleCategoryService"
@@ -201,7 +201,7 @@
                 }
             }
         },
-        "getIdByKey": {
+        "/article_category/getIdByKey": {
             "get": {
                 "tags": [
                     "ArticleCategoryService"
@@ -238,7 +238,7 @@
                 }
             }
         },
-        "getTypes": {
+        "/article_category/getTypes": {
             "get": {
                 "tags": [
                     "ArticleCategoryService"
@@ -270,7 +270,7 @@
                 }
             }
         },
-        "/getList": {
+        "/article/getList": {
             "get": {
                 "tags": [
                     "ArticleService"
@@ -316,7 +316,7 @@
                 }
             }
         },
-        "/getPagesInfo": {
+        "/article/getPagesInfo": {
             "get": {
                 "tags": [
                     "ArticleService"
@@ -349,7 +349,7 @@
                 }
             }
         },
-        "/add": {
+        "/article/add": {
             "get": {
                 "tags": [
                     "ArticleService"
@@ -386,7 +386,7 @@
                 }
             }
         },
-        "/edit": {
+        "/article/edit": {
             "get": {
                 "tags": [
                     "ArticleService"
@@ -423,7 +423,7 @@
                 }
             }
         },
-        "/delete": {
+        "/article/delete": {
             "get": {
                 "tags": [
                     "ArticleService"
@@ -460,7 +460,7 @@
                 }
             }
         },
-        "/detail": {
+        "/article/detail": {
             "get": {
                 "tags": [
                     "ArticleService"
@@ -497,7 +497,7 @@
                 }
             }
         },
-        "/detailByKey": {
+        "/article/detailByKey": {
             "get": {
                 "tags": [
                     "ArticleService"
@@ -534,7 +534,7 @@
                 }
             }
         },
-        "/getTypes": {
+        "/article/getTypes": {
             "get": {
                 "tags": [
                     "ArticleService"
