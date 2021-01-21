@@ -68,4 +68,15 @@
  *          type="object",
  *      )
  * )
+ * 
+ * @OA\Parameter(
+ *      parameter="lang",
+ *      name="lang",
+ *      description="语言 例:zh-CN,en",
+ *      in="query",
+ *      required=false,
+ *      @OA\Schema(
+ *          type="string",
+ *      )
+ * )
  */

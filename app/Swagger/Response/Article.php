@@ -50,6 +50,19 @@
  *      @OA\Property(property="video", description="视频", type="string", default=""),
  *      @OA\Property(property="content", description="文章内容", type="string", default=""),
  *      @OA\Property(property="created_at", description="创建时间", type="string", default="2020-01-01 0:0:0"),
- *      @OA\Property(property="updated_at", description="更新时间", type="string", default="2020-01-01 0:0:0")
+ *      @OA\Property(property="updated_at", description="更新时间", type="string", default="2020-01-01 0:0:0"),
+ *      @OA\Property(
+ *          property="category", 
+ *          description="分类信息", 
+ *          type="object", 
+ *          allOf={
+ *              @OA\Schema(
+ *                  @OA\Property(property="id", description="主键ID", type="integer", default="1"),
+ *                  @OA\Property(property="name", description="名称", type="string", default=""),
+ *                  @OA\Property(property="parent_id", description="夫ID", type="integer", default="0"),
+ *                  @OA\Property(property="key", description="key", type="string", default=""),
+ *              )
+ *          }
+ *      )
  *  )
  */

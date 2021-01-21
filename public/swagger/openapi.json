@@ -290,6 +290,9 @@
                     },
                     {
                         "$ref": "#/components/parameters/page"
+                    },
+                    {
+                        "$ref": "#/components/parameters/lang"
                     }
                 ],
                 "responses": {
@@ -508,6 +511,9 @@
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/key"
+                    },
+                    {
+                        "$ref": "#/components/parameters/lang"
                     }
                 ],
                 "responses": {
@@ -705,6 +711,37 @@
                         "description": "更新时间",
                         "type": "string",
                         "default": "2020-01-01 0:0:0"
+                    },
+                    "category": {
+                        "description": "分类信息",
+                        "type": "object",
+                        "allOf": [
+                            {
+                                "properties": {
+                                    "id": {
+                                        "description": "主键ID",
+                                        "type": "integer",
+                                        "default": "1"
+                                    },
+                                    "name": {
+                                        "description": "名称",
+                                        "type": "string",
+                                        "default": ""
+                                    },
+                                    "parent_id": {
+                                        "description": "夫ID",
+                                        "type": "integer",
+                                        "default": "0"
+                                    },
+                                    "key": {
+                                        "description": "key",
+                                        "type": "string",
+                                        "default": ""
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        ]
                     }
                 },
                 "type": "object"
@@ -953,6 +990,15 @@
                 "required": false,
                 "schema": {
                     "type": "object"
+                }
+            },
+            "lang": {
+                "name": "lang",
+                "in": "query",
+                "description": "语言 例:zh-CN,en",
+                "required": false,
+                "schema": {
+                    "type": "string"
                 }
             },
             "id": {

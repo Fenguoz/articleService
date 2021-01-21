@@ -30,6 +30,7 @@ class ArticleService extends BaseService implements ArticleServiceInterface
      *     @Parameter(ref="#/components/parameters/article_order"),
      *     @Parameter(ref="#/components/parameters/count"),
      *     @Parameter(ref="#/components/parameters/page"),
+     *     @Parameter(ref="#/components/parameters/lang"),
      *     @Response(
      *         response=200,
      *         description="SUCCESS",
@@ -49,11 +50,16 @@ class ArticleService extends BaseService implements ArticleServiceInterface
         array $where = [],
         array $order = ['recommend' => 'DESC', 'sort' => 'ASC', 'id' => 'DESC'],
         int $count = 0,
-        int $page = 1
+        int $page = 1,
+        string $lang = null
     ) {
+        if ($lang) {
+            $where['lang'] = $lang;
+        }
         $list = (new Article)->getList($where, $order, $count, $page);
-        if (!$list)
+        if (!$list) {
             throw new BusinessException(ErrorCode::NO_DATA);
+        }
 
         return $this->success($list);
     }
@@ -249,7 +255,7 @@ class ArticleService extends BaseService implements ArticleServiceInterface
      */
     public function detail(int $id)
     {
-        $article = Article::find($id);
+        $article = Article::with('category')->find($id);
         if (!$article)
             throw new BusinessException(ErrorCode::DATA_NOT_EXIST);
 
@@ -266,6 +272,7 @@ class ArticleService extends BaseService implements ArticleServiceInterface
      *     summary="文章详情（key）",
      *     description="根据key获取文章详情",
      *     @Parameter(ref="#/components/parameters/key"),
+     *     @Parameter(ref="#/components/parameters/lang"),
      *     @Response(
      *         response=200,
      *         description="操作成功",
@@ -281,9 +288,9 @@ class ArticleService extends BaseService implements ArticleServiceInterface
     /**
      * @GetMapping(path="detailByKey")
      */
-    public function detailByKey(string $key)
+    public function detailByKey(string $key, string $lang = 'zh-CN')
     {
-        $article = Article::where('key', $key)->first();
+        $article = Article::where('key', $key)->where('lang', $lang)->first();
         if (!$article)
             throw new BusinessException(ErrorCode::DATA_NOT_EXIST);
 

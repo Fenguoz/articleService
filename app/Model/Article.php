@@ -1,9 +1,11 @@
 <?php
 
-declare (strict_types=1);
+declare(strict_types=1);
+
 namespace App\Model;
 
 use Hyperf\Database\Model\SoftDeletes;
+
 /**
  * @property int $id 
  * @property int $category_id 
@@ -72,7 +74,7 @@ class Article extends Model
             $this->table . '.hits',
             $this->table . '.type',
             $this->table . '.link',
-            $this->table . '.lang',
+            // $this->table . '.lang',
             $this->table . '.video',
             $this->table . '.created_at'
         );
@@ -109,7 +111,7 @@ class Article extends Model
             $offset = ($currentPage - 1) * $pageSize;
             $query = $query->offset($offset)->limit($pageSize);
         }
-        return $query->get();
+        return $query->with('category')->get();
     }
     /**
      * getCount
@@ -141,5 +143,11 @@ class Article extends Model
         }
         $query = $query->count();
         return $query > 0 ? $query : 0;
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(ArticleCategory::class, 'category_id', 'id')
+            ->select(['id', 'name', 'parent_id', 'key']);
     }
 }
