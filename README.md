@@ -1,40 +1,47 @@
-# 文章服务
+<h1 align="center">文章服务</h1>
 
-#### 环境配置：
+## 概述
+
+文章服务是微服务就是一个独立的实体，它可以独立被部署，也可以作为一个操作系统进程存在。服务与服务之间存在隔离性，服务之间均通过网络调用进行通信，从而加强服务之间的隔离性，避免紧耦合。
+
+该服务基于 Hyperf2.0 框架实现。通过 JSON RPC 轻量级的 RPC 协议标准，可自定义基于 HTTP 协议来传输，或直接基于 TCP 协议来传输方式实现服务注册。客户端只需要通过协议标准直接调用已封装好的方法即可。
+
+## 环境要求
 
 - PHP >= 7.2
 - Swoole PHP 扩展 >= 4.5，并关闭了 `Short Name`
-- OpenSSL PHP 扩展
-- JSON PHP 扩展
-- PDO PHP 扩展
-- Redis PHP 扩展
-- Protobuf PHP 扩展
 - Mysql5.7
 - Nginx
-- Swagger3.0
 
-# Swagger
+## 特点
 
-- 访问地址：Nginx自行配置（地址：public/swagger/index.html）
-- 更新命令：php bin/hyperf.php swagger:gen -o ./public/swagger/ -f json
+- 自定义内置文章类型、文章分类类型
+- 支持多语言文章
+- 移动端多种打开方式
 
-# JSON-RPC
+## 功能清单
 
-``` php
-//REST Client 示例
-POST http://127.0.0.1:9801 HTTP/1.1
-Content-Type: {{contentType}}
+- 文章
+    - 获取文章列表
+    - 获取文章列表分页信息
+    - 添加文章
+    - 编辑文章
+    - 删除文章
+    - 获取文章详情(根据主键ID)
+    - 获取文章详情(根据Key值)
+    - 获取文章类型
+- 文章分类
+    - 获取文章分类列表
+    - 获取文章分类列表分页信息
+    - 添加文章分类
+    - 编辑文章分类
+    - 删除文章分类
+    - 获取文章分类主键ID(根据key值)）
+    - 获取文章分类类型
 
-{
-    "jsonrpc":"2.0",
-    "method":"/article/getList",
-    "params":[
-        {"category_id":"5"},
-        [],
-        20,
-        1
-    ],
-    "id":"6007d5ab4096b",
-    "context":[]
-}
-```
+# 命令
+| 命令行 | 说明 | crontab |
+| :-----| :---- | :---- |
+| composer install | 安装扩展包 | -- |
+| php bin/hyperf.php server:watch | 热更新（仅测试用） | -- |
+| php bin/hyperf.php swagger:gen -o ./public/swagger/ -f json | 生成swagger文档 | -- |
