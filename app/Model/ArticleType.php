@@ -14,7 +14,7 @@ class ArticleType extends Model
      *
      * @var string
      */
-    protected $table = 'article_types';
+    protected $table = 'article_type';
     /**
      * The attributes that are mass assignable.
      *

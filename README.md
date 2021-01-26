@@ -14,12 +14,14 @@
 - Swoole PHP 扩展 >= 4.5，并关闭了 `Short Name`
 - Mysql 5.7
 - Nginx
+- Consul
 
 ## 特点
 
 - 自定义内置文章类型、文章分类类型
 - 支持多语言文章
 - 移动端多种打开方式
+- 支持跨语言调用
 
 ## 功能清单
 
@@ -41,13 +43,70 @@
     - 获取文章分类主键ID(根据key值)）
     - 获取文章分类类型
 
+## 快速开始
+
+### 部署
+
+``` bash
+# 克隆项目
+git clone ...
+
+# 进入根目录
+cd {file}
+
+# 安装扩展包
+composer install
+
+# 配置env文件
+cp .env.example .env
+
+# 数据迁移
+php bin/hyperf.php migrate --seed
+
+# 运行 Consul（若已运行，忽略）
+consul agent -dev -bind 127.0.0.1
+
+# 运行
+php bin/hyperf.php start
+```
+
+### 接口调用
+
+查看 **可调用接口** 详情，请查看 Swagger 文档。
+
+访问路径：public/swagger/index.html
+
+swagger文件：public/swagger/openapi.json
+
+PHP 调用示例：
+``` php
+use GuzzleHttp\Client;
+
+$host = 'http://127.0.0.1:9801';
+(new Client)->post($host, [
+    'json' => [
+        'jsonrpc' => '2.0',
+        'method' => '/article/getTypes',
+        'params' => [],
+        'id' => 1,
+    ]
+]);
+```
+
+CURL 调用示例：
+``` bash
+curl -X POST -H "Content-Type: application/json" \
+--data '{"jsonrpc":"2.0","method":"/article/getTypes","params":[],"id":1}' \
+http://127.0.0.1:9801
+```
+
 ## 计划
 
 - 批量处理
 - 模型缓存
 - ...
 
-## 命令
+## 脚本命令
 | 命令行 | 说明 | crontab |
 | :-----| :---- | :---- |
 | composer install | 安装扩展包 | -- |
