@@ -43,9 +43,6 @@ class ArticleService extends BaseService implements ArticleServiceInterface
      *     )
      * )
      */
-    /**
-     * @GetMapping(path="getList")
-     */
     public function getList(
         array $where = [],
         array $order = ['recommend' => 'DESC', 'sort' => 'ASC', 'id' => 'DESC'],
@@ -81,9 +78,6 @@ class ArticleService extends BaseService implements ArticleServiceInterface
      *     )
      * )
      */
-    /**
-     * @GetMapping(path="getPagesInfo")
-     */
     public function getPagesInfo(array $where = [], int $count = 10, int $page = 1)
     {
         $pageInfo = (new Article)->getPagesInfo($where, $count, $page);
@@ -109,9 +103,6 @@ class ArticleService extends BaseService implements ArticleServiceInterface
      *         @JsonContent(ref="#/components/schemas/error")
      *     )
      * )
-     */
-    /**
-     * @GetMapping(path="add")
      */
     public function add(array $params)
     {
@@ -142,9 +133,6 @@ class ArticleService extends BaseService implements ArticleServiceInterface
      *         @JsonContent(ref="#/components/schemas/error")
      *     )
      * )
-     */
-    /**
-     * @GetMapping(path="edit")
      */
     public function edit(array $params)
     {
@@ -214,9 +202,6 @@ class ArticleService extends BaseService implements ArticleServiceInterface
      *     )
      * )
      */
-    /**
-     * @GetMapping(path="delete")
-     */
     public function delete(string $ids)
     {
         if (!$ids)
@@ -250,9 +235,6 @@ class ArticleService extends BaseService implements ArticleServiceInterface
      *     )
      * )
      */
-    /**
-     * @GetMapping(path="detail")
-     */
     public function detail(int $id)
     {
         $article = Article::with('category')->find($id);
@@ -285,9 +267,6 @@ class ArticleService extends BaseService implements ArticleServiceInterface
      *     )
      * )
      */
-    /**
-     * @GetMapping(path="detailByKey")
-     */
     public function detailByKey(string $key, string $lang = 'zh-CN')
     {
         $article = Article::where('key', $key)->where('lang', $lang)->first();
@@ -317,9 +296,6 @@ class ArticleService extends BaseService implements ArticleServiceInterface
      *         @JsonContent(ref="#/components/schemas/error")
      *     )
      * )
-     */
-    /**
-     * @GetMapping(path="getTypes")
      */
     public function getTypes()
     {

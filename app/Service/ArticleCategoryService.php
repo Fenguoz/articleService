@@ -42,9 +42,6 @@ class ArticleCategoryService extends BaseService implements ArticleCategoryServi
      *     )
      * )
      */
-    /**
-     * @GetMapping(path="getList")
-     */
     public function getList(
         array $where = [],
         array $order = ['sort' => 'ASC', 'id' => 'DESC'],
@@ -75,9 +72,6 @@ class ArticleCategoryService extends BaseService implements ArticleCategoryServi
      *     )
      * )
      */
-    /**
-     * @GetMapping(path="getPagesInfo")
-     */
     public function getPagesInfo(array $where = [], int $count = 10, int $page = 1)
     {
         $pageInfo = (new ArticleCategory)->getPagesInfo($where, $count, $page);
@@ -103,9 +97,6 @@ class ArticleCategoryService extends BaseService implements ArticleCategoryServi
      *         @JsonContent(ref="#/components/schemas/error")
      *     )
      * )
-     */
-    /**
-     * @GetMapping(path="add")
      */
     public function add(array $params)
     {
@@ -136,9 +127,6 @@ class ArticleCategoryService extends BaseService implements ArticleCategoryServi
      *         @JsonContent(ref="#/components/schemas/error")
      *     )
      * )
-     */
-    /**
-     * @GetMapping(path="edit")
      */
     public function edit(array $params)
     {
@@ -197,9 +185,6 @@ class ArticleCategoryService extends BaseService implements ArticleCategoryServi
      *     )
      * )
      */
-    /**
-     * @GetMapping(path="delete")
-     */
     public function delete(string $ids)
     {
         if (!$ids)
@@ -233,9 +218,6 @@ class ArticleCategoryService extends BaseService implements ArticleCategoryServi
      *     )
      * )
      */
-    /**
-     * @GetMapping(path="getIdByKey")
-     */
     public function getIdByKey(string $key)
     {
         $id = ArticleCategory::where('key', $key)->value('id');
@@ -263,9 +245,6 @@ class ArticleCategoryService extends BaseService implements ArticleCategoryServi
      *         @JsonContent(ref="#/components/schemas/error")
      *     )
      * )
-     */
-    /**
-     * @GetMapping(path="getTypes")
      */
     public function getTypes()
     {
