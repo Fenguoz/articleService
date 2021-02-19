@@ -8,7 +8,6 @@ use App\Model\Article;
 use App\Model\ArticleType;
 use App\Rpc\ArticleServiceInterface;
 use Hyperf\RpcServer\Annotation\RpcService;
-use Hyperf\HttpServer\Annotation\GetMapping;
 use OpenApi\Annotations\Get;
 use OpenApi\Annotations\Parameter;
 use OpenApi\Annotations\JsonContent;
