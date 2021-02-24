@@ -100,4 +100,9 @@ class ErrorCode extends AbstractConstants
      */
     const CATEGORY_ID_RERROR = 13004;
 
+    /**
+     * @Message("KEY_EXIST")
+     */
+    const KEY_EXIST = 13005;
+
 }

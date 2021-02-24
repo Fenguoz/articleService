@@ -107,6 +107,13 @@ class ArticleService extends BaseService implements ArticleServiceInterface
     {
         $data = $this->_checkData($params);
 
+        if(isset($data['key'])){
+            $isExist = Article::isExistArticleKey($data['key']);
+            if($isExist){
+                throw new BusinessException(ErrorCode::KEY_EXIST);
+            }
+        }
+
         $result = Article::create($data);
         if (!$result)
             throw new BusinessException(ErrorCode::ADD_FAIL);
@@ -138,8 +145,16 @@ class ArticleService extends BaseService implements ArticleServiceInterface
         if (!isset($params['id']) || $params['id'] <= 0)
             throw new BusinessException(ErrorCode::IDS_EMPTY);
         $id = (int)$params['id'];
-
+        
         $data = $this->_checkData($params);
+        
+        $info = Article::select('key')->where('id', $id)->first();
+        if(isset($data['key']) && $info->key != $data['key']){
+            $isExist = Article::isExistArticleKey($data['key']);
+            if($isExist){
+                throw new BusinessException(ErrorCode::KEY_EXIST);
+            }
+        }
 
         $result = Article::where('id', $id)->update($data);
         if (!$result)

@@ -150,7 +150,7 @@ class ArticleCategoryService extends BaseService implements ArticleCategoryServi
     private function _checkData($params = [])
     {
         $data = [];
-        if (!isset($params['parent_id']) || $params['parent_id'] <= 0)
+        if (!isset($params['parent_id']) || $params['parent_id'] < 0)
             throw new BusinessException(ErrorCode::PARENT_ID_ERROR);
         if (!isset($params['name']) || empty($params['name']))
             throw new BusinessException(ErrorCode::NAME_EMPTY);

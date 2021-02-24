@@ -42,7 +42,7 @@ class Article extends Model
      *
      * @var array
      */
-    protected $fillable = ['category_id', 'title', 'content', 'description', 'cover', 'display', 'keywords', 'recommend', 'author', 'hits', 'type', 'link', 'lang', 'video', 'keywords'];
+    protected $fillable = ['category_id', 'title', 'content', 'description', 'cover', 'display', 'key', 'recommend', 'author', 'hits', 'type', 'link', 'lang', 'video', 'keywords'];
     /**
      * The attributes that should be cast to native types.
      *
@@ -149,5 +149,10 @@ class Article extends Model
     {
         return $this->belongsTo(ArticleCategory::class, 'category_id', 'id')
             ->select(['id', 'name', 'parent_id', 'key']);
+    }
+
+    public static function isExistArticleKey(string $key): bool
+    {
+        return Article::where('key', $key)->exists();
     }
 }
