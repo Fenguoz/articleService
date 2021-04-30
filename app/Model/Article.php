@@ -64,7 +64,7 @@ class Article extends Model
             $this->table . '.id',
             $this->table . '.category_id',
             $this->table . '.title',
-            // $this->table . '.content',
+            $this->table . '.content',
             $this->table . '.description',
             $this->table . '.cover',
             $this->table . '.display',
