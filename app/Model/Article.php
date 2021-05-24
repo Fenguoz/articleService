@@ -42,7 +42,7 @@ class Article extends Model
      *
      * @var array
      */
-    protected $fillable = ['category_id', 'title', 'content', 'description', 'cover', 'display', 'key', 'recommend', 'author', 'hits', 'type', 'link', 'lang', 'video', 'keywords'];
+    protected $fillable = ['category_id', 'title', 'content', 'description', 'cover', 'display', 'key', 'recommend', 'author', 'hits', 'type', 'link', 'lang', 'video', 'keywords', 'sort'];
     /**
      * The attributes that should be cast to native types.
      *
