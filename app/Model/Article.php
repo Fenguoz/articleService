@@ -151,8 +151,8 @@ class Article extends Model
             ->select(['id', 'name', 'parent_id', 'key']);
     }
 
-    public static function isExistArticleKey(string $key): bool
+    public static function isExistArticleKey(string $key, string $lang): bool
     {
-        return Article::where('key', $key)->exists();
+        return Article::where('key', $key)->where('lang', $lang)->exists();
     }
 }

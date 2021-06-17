@@ -108,7 +108,7 @@ class ArticleService extends BaseService implements ArticleServiceInterface
         $data = $this->_checkData($params);
 
         if(isset($data['key'])){
-            $isExist = Article::isExistArticleKey($data['key']);
+            $isExist = Article::isExistArticleKey($data['key'], $data['lang']);
             if($isExist){
                 throw new BusinessException(ErrorCode::KEY_EXIST);
             }
@@ -150,7 +150,7 @@ class ArticleService extends BaseService implements ArticleServiceInterface
         
         $info = Article::select('key')->where('id', $id)->first();
         if(isset($data['key']) && $info->key != $data['key']){
-            $isExist = Article::isExistArticleKey($data['key']);
+            $isExist = Article::isExistArticleKey($data['key'], $data['lang']);
             if($isExist){
                 throw new BusinessException(ErrorCode::KEY_EXIST);
             }
@@ -178,6 +178,7 @@ class ArticleService extends BaseService implements ArticleServiceInterface
 
         $data['category_id'] = (int)$params['category_id'];
         $data['title'] = $params['title'];
+        $data['lang'] = 'zh-CN';
 
         if (isset($params['key']) && $params['key']) $data['key'] = $params['key'];
         if (isset($params['content']) && $params['content']) $data['content'] = $params['content'];
